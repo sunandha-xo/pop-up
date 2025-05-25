@@ -1,0 +1,93 @@
+body{
+    background-image: linear-gradient(to top right,#f2f2cb,#d2c87cee,#ecfb1c);
+    height: 100vh;
+    overflow: hidden;
+}
+.btn{
+    display: block;
+    color: #ffff;
+    margin-top: 300px;
+    padding: 5px 10px;
+    text-align: center;
+
+}
+.btn label{
+    background-color: #f7f4f4;
+    color: #575353;
+    display:inline-block;
+    margin: 0 20px;
+    padding: 20px;
+}
+.modal{
+    height: 350px;
+    width: 300px;
+    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transition-delay: 2s;
+    transform: translate(-50%,-50%) scale(0);
+}
+.modal .header img {
+    top: -30px;
+    width: 90%;
+    left: 5%;
+    position: relative;
+    opacity: 0;
+    transform: translate(0,70px);
+    transition: 0.7s;
+}
+
+.modal img{
+    position: absolute;
+    
+}
+
+.modal .content{
+    background-color: #E2F0EB4D;
+    padding: 20px;
+    min-height: 100px;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    color: #eee;
+    font-family: monospace;
+    transform: translate(0,-70px);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+.modal .confirm{
+    text-align: center;
+    margin-top: 30px;
+}
+.modal .content label,
+.modal .content button{
+    display: inline-block;
+    border: none;
+    padding: 10px;
+    color: #575353;
+    margin: 0 10px;
+}
+.modal .content button{
+    background-color:#ecfb1c ;
+    color:#575353 ;
+}
+.modal input[name="setmodal"]{
+    display: none;
+}
+.modal:has(input[name="setmodal"]:checked){
+    transition: 0s;
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal:has(input[name="setmodal"]:checked) .header{
+    opacity: 1;
+    transform: translate(0,0);
+}
+.modal:has(input[name="setmodal"]:checked) .content{
+    opacity: 1;
+    transform: translate(0,0);
+}
+.modal:has(input[name="setmodal"]:checked) .header img {
+    opacity: 1;
+    transform: translate(0, 0);
+}
